@@ -1,25 +1,24 @@
 <?php
-// Inclure header.php
+// Template des pages
 get_header();
-
-// La boucle pour afficher les articles - The Loop
-if ( have_posts() ) {
-	while ( have_posts() ) {
-		the_post(); 
-		//Afficher l'image à la une s'il y en a une
-		if ( has_post_thumbnail() ) {
-			the_post_thumbnail();
-		} 
-		// Contenu de l'article
-		echo '<h3><a href='.get_the_permalink().'>'.get_the_title().'</a></h3>';
-		the_excerpt();
-		echo '<hr>';
-	} 
-} 
-
-// Afficher une zone de widgets
-dynamic_sidebar('my_sidebar');
-
-// Inclure footer.php
-get_footer();
 ?>
+<div id="main">
+	<?php if ( have_posts() ): ?>
+	<section>
+		<?php while ( have_posts() ):
+			the_post();
+			if (has_post_thumbnail()) the_post_thumbnail();
+		?>
+		<article>
+			<h1><?php the_title(); ?></h1>
+			<p><?php the_content(); ?></p>
+		</article>
+		<?php endwhile;?>
+	</section>
+	<?php else: ?>
+	<section>
+		<h1>Aucun post existant</h1>
+	</section>
+	<?php endif; ?>
+</div>
+<?php get_footer();?>
