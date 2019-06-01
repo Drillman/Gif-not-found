@@ -4,12 +4,15 @@ get_header();
 ?>
 <div id="main">
 	<?php if ( have_posts() ): ?>
-	<section>
+	<section class="posts">
 		<?php while ( have_posts() ):
-			the_post();
-			if (has_post_thumbnail()) the_post_thumbnail();
-		?>
+		the_post();?>
 		<article>
+			<?php if (has_post_thumbnail()): ?>
+			<a href="" class="image fit">
+				<?php the_post_thumbnail(); ?>
+			</a>
+			<?php endif; ?>
 			<h1><?php the_title(); ?></h1>
 			<p><?php the_content(); ?></p>
 		</article>

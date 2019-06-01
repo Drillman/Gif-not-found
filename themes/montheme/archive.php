@@ -1,17 +1,25 @@
 <?php
-// Template pour les catégories
+// Template des pages
 get_header();
 ?>
 <div id="main">
 	<?php if ( have_posts() ): ?>
-	<section>
+	<section class="posts">
 		<?php while ( have_posts() ):
-			the_post();
-			if (has_post_thumbnail()) the_post_thumbnail();
-		?>
+		the_post();?>
 		<article>
-			<h1><?php the_title(); ?></h1>
+			<header>
+				<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+			</header>
+			<?php if (has_post_thumbnail()): ?>
+			<a href="<?php the_permalink() ?>" class="image fit">
+				<?php the_post_thumbnail(); ?>
+			</a>
+			<?php endif; ?>
 			<p><?php the_content(); ?></p>
+			<ul class="actions special">
+				<li><a href="<?php the_permalink() ?>" class="button">Voir</a></li>
+			</ul>
 		</article>
 		<?php endwhile;?>
 	</section>
@@ -22,4 +30,3 @@ get_header();
 	<?php endif; ?>
 </div>
 <?php get_footer();?>
-<?php
