@@ -14,3 +14,7 @@ function default_short_code(){
 
 add_shortcode('gif_not_found', '<h1>Weeeeshshhshshshshsh</h1>');
 // require(plugin_dir_path(__FILE__).'shortcode.php');
+
+
+global $wpdb;
+$results = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}options WHERE option_id = 1", OBJECT );
