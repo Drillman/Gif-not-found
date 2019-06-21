@@ -4,7 +4,7 @@ twentynineteen
 twentyseventeen
 twentysixteen
 themes/index.php
-plugins/askimet/*
+plugins/akismet/*
 plugins/hello.php
 plugins/index.php
 .php_cs.cache
