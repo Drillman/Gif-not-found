@@ -9,6 +9,7 @@ Author URI: https://motoriders.fr/
 */
 
 require(plugin_dir_path(__FILE__).'shortcode.php');
+require(plugin_dir_path(__FILE__).'settings.php');
 
 
 add_action('wp_enqueue_scripts', 'gif_not_found_scripts');
