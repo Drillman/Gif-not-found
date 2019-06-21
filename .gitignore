@@ -7,3 +7,4 @@ themes/index.php
 plugins/askimet/*
 plugins/hello.php
 plugins/index.php
+.php_cs.cache
