@@ -1,6 +1,9 @@
 *.zip
-database
+database/*
 twentynineteen
 twentyseventeen
 twentysixteen
-index.php
+themes/index.php
+plugins/askimet/*
+plugins/hello.php
+plugins/index.php
