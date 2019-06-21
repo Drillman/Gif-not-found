@@ -7,9 +7,22 @@ Author: Bruuuuuh
 Version: 1.0
 Author URI: https://motoriders.fr/
 */
+<<<<<<< HEAD
+=======
+function default_short_code()
+{
+    echo "<h1>Ton père la saucisse</h1>";
+    // return '<img src="https://www.kizoa.fr/img/e8nZC.gif" alt="Bruuuuuh">';
+}
+>>>>>>> 1cc2790dece166a290dabb25aa781d16bdc7b22c
 
 require(plugin_dir_path(__FILE__).'shortcode.php');
 
 
-global $wpdb;
-$results = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}options WHERE option_id = 1", OBJECT );
+add_action('wp_enqueue_scripts', 'gif_not_found_scripts');
+
+function gif_not_found_scripts()
+{
+    wp_enqueue_script('gif_not_found_script', plugins_url('/index.js', __FILE__));
+    wp_enqueue_script('gif_not_found_vuejs', plugins_url('/vue.js', __FILE__));
+}
