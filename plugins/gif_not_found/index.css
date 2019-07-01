@@ -1,6 +1,6 @@
 .slide-left-enter-active,
 .slide-left-leave-active {
-    transition: all .25s ease-in-out;
+    transition: all .5s cubic-bezier(.75,-0.5,0,1.75);
 }
 
 .slide-left-enter,
