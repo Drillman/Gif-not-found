@@ -27,9 +27,17 @@ const GifNotFoundSlider = {
                 if (response.ok) {
                     return response.json();
                 }
+
+                throw new Error('Impossible de charger le GIF.');
             }).then((data) => {
-                this.giphy.image.url = data.data.image_original_url;
-                console.log(data.data.image_original_url);
+                console.log(data.data);
+                const image = new Image();
+                image.src = data.data.images.downsized.url;
+
+                image.addEventListener('load', () => {
+                    this.giphy.image.url = image.src;
+                });
+
             }).catch(function(error) {
                 console.error(error); 
             });
