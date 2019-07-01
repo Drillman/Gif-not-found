@@ -22,19 +22,45 @@ function elementsPage(){
   <h1>Documentation du plugin Gif not found</h1>
   <p> pour utiliser le pluging il faut utiliser les shortcodes suivant : </p>
   
-  <table>
-    <thead>
+  
+
+  <div class="units-row">
+    <h4>Simple Table</h4>
+    <hr/>
+    <table class="table-simple">
+      <thead>
         <tr>
-            <th colspan="2">The table header</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Points</th>
         </tr>
-    </thead>
-    <tbody>
+      </thead>
+      <tbody>
         <tr>
-            <td>The table body</td>
-            <td>with two columns</td>
+          <td>John</td>
+          <td>Doe</td>
+          <td>50</td>
         </tr>
-    </tbody>
-</table>
+        <tr>
+          <td>Jill</td>
+          <td>Smith</td>
+          <td>94</td>
+        </tr>
+        <tr>
+          <td>Jane</td>
+          <td>Doe</td>
+          <td>67</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">Total points</td>
+          <td>211</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
   <?php
 }
 
