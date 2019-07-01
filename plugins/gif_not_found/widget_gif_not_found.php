@@ -26,7 +26,7 @@
         $tag = strip_tags($instance['tag']);
         $height = strip_tags($instance['height']);
         $width = strip_tags($instance['width']);
-        echo "<div id='gif_not_found_slider'></div><input id='gif_not_found_tag' type='hidden' data-tag='$tag' data-width='$width' data-height='$height' />";
+        echo "<div id='gif_not_found_slider_widget'></div><input id='gif_not_found_slider_widget_data' type='hidden' data-tag='$tag' data-width='$width' data-height='$height' />";
     
  }
 

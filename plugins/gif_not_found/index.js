@@ -1,6 +1,12 @@
 'use strict';
 
 const GifNotFoundSlider = {
+    props: {
+        dataId: {
+            type: String,
+            default: 'gif_not_found_slider_data'
+        }
+    },
     data() {
         return {
             giphy: {
@@ -21,7 +27,7 @@ const GifNotFoundSlider = {
 
     methods: {
         loadGif() {
-            const tag = document.getElementById('gif_not_found_tag').dataset.tag || 'cat';
+            const tag = document.getElementById(this.dataId).dataset.tag || 'cat';
 
             fetch(this.giphy.api.endpoint + tag).then(function(response) {
                 if (response.ok) {
@@ -45,7 +51,7 @@ const GifNotFoundSlider = {
     },
 
     mounted() {
-        const gifNotFoundParameters = document.getElementById('gif_not_found_tag').dataset;
+        const gifNotFoundParameters = document.getElementById(this.dataId).dataset;
 
         this.loadGif();
         this.giphy.image.style.width = gifNotFoundParameters.width || '30vw';
@@ -65,8 +71,31 @@ const GifNotFoundSlider = {
 };
 
 window.addEventListener('load', function() {
-    new Vue({
-        el: '#gif_not_found_slider',
-        render: h => h(GifNotFoundSlider)
-    });
+    const gifNotFoundSlider = document.getElementById('gif_not_found_slider');
+
+    if (gifNotFoundSlider instanceof HTMLElement) {
+        new Vue({
+            el: `#${gifNotFoundSlider.id}`,
+            components: {
+                GifNotFoundSlider
+            },
+            template: `
+                <gif-not-found-slider data-id='gif_not_found_slider_data' />
+            `
+        });
+    }
+    
+    const gifNotFoundSliderWidget = document.getElementById('gif_not_found_slider_widget');
+
+    if (gifNotFoundSliderWidget instanceof HTMLElement) {
+        new Vue({
+            el: `#${gifNotFoundSliderWidget.id}`,
+            components: {
+                GifNotFoundSlider
+            },
+            template: `
+                <gif-not-found-slider data-id='gif_not_found_slider_widget_data' />
+            `
+        });
+    }
 });
