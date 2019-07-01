@@ -15,5 +15,5 @@ function gif_not_found_slider($attributes)
         'height' => '30vh'
     ], $attributes);
 
-    return "<div id='gif_not_found_slider'></div><input id='gif_not_found_tag' type='hidden' data-tag='{$attributes["tag"]}' data-width='{$attributes["width"]}' data-height='{$attributes["height"]}' />";
+    return "<div id='gif_not_found_slider'></div><input id='gif_not_found_slider_data' type='hidden' data-tag='{$attributes["tag"]}' data-width='{$attributes["width"]}' data-height='{$attributes["height"]}' />";
 }
