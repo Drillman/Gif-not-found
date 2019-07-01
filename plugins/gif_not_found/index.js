@@ -30,8 +30,9 @@ const GifNotFoundSlider = {
 
                 throw new Error('Impossible de charger le GIF.');
             }).then((data) => {
+                console.log(data.data);
                 const image = new Image();
-                image.src = data.data.image_original_url;
+                image.src = data.data.images.downsized.url;
 
                 image.addEventListener('load', () => {
                     this.giphy.image.url = image.src;
