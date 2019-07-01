@@ -99,7 +99,7 @@ function my_cool_plugin_create_menu() {
 function elementsPage(){
   ?>
   <h1>Documentation du plugin Gif not found</h1>
-    <p>Il y a un shortCode avec 3 atributs optionnels :</p>
+    <p>Il y a un shortcode avec 3 atributs optionnels :</p>
     <p>&nbsp;&nbsp;&nbsp;&nbsp; - le thème </p>
     <p>&nbsp;&nbsp;&nbsp;&nbsp; - la largeur du gif </p>
     <p>&nbsp;&nbsp;&nbsp;&nbsp; - la hauteur du gif </p>
@@ -119,19 +119,19 @@ function elementsPage(){
     <tr>
       <td><strong>Tag</strong></td>
       <td>cat</td>
-      <td>Vous pouvez choisir le thème que vous voulez en saissisant le Tag dans le shortCode</td>
+      <td>Vous pouvez choisir le thème que vous voulez en saissisant le Tag dans le shortcode</td>
       <td>[gif_not_found_slider tag="dog"]</td>
     </tr>
     <tr>
       <td><strong>Largeur</strong></td>
       <td>30vw</td>
-      <td>Vous pouvez choisir la taille que vous voulez (en px ou en pourcentage de la taille de la fenêtre [vw]) en saissisant la width dans le shortCode</td>
+      <td>Vous pouvez choisir la taille que vous voulez (en px ou en pourcentage de la taille de la fenêtre [vw]) en saissisant la width dans le shortcode</td>
       <td>[gif_not_found_slider width="50vw"]</td>
     </tr>
     <tr>
       <td><strong>Hauteur</strong></td>
       <td>30vh</td>
-      <td>Vous pouvez choisir la taille que vous voulez (en px ou en pourcentage de la taille de la fenêtre [vh]) en saissisant la height dans le shortCode</td>
+      <td>Vous pouvez choisir la taille que vous voulez (en px ou en pourcentage de la taille de la fenêtre [vh]) en saissisant la height dans le shortcode</td>
       <td>[gif_not_found_slider height="50vh"]</td>
     </tr>
   </tbody>
