@@ -1,12 +1,4 @@
 <?php
-// create custom plugin settings menu
-
-// add_action('admin_head', 'gif_not_found_admin_stylesheets');
-
-// function gif_not_found_admin_stylesheets()
-// {
-//     echo '<link rel="stylesheet" href="admin.css" />';
-// }
 
 function wpln_custom_admin_css() {
   echo '<style type="text/css">
@@ -106,66 +98,49 @@ function my_cool_plugin_create_menu() {
 function elementsPage(){
   ?>
   <h1>Documentation du plugin Gif not found</h1>
-  <p> pour utiliser le pluging il faut utiliser les shortcodes suivant : </p>
+    <p>Il y a un shortCode avec 3 atributs optionnels :</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp; - le thème </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp; - la largeur du gif </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp; - la hauteur du gif </p>
   
-  
+  <p>pour utiliser le pluging il faut utiliser le shortcode suivant : [gif_not_found_slider] </p>
 
   <table>
   <thead>
     <tr>
       <th>Option</th>
-      <th>Default</th>
+      <th>Défaut</th>
       <th>Description</th>
+      <th>Exemple d'utilisation</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>showSpeed</strong></td>
-      <td>15</td>
-      <td>The speed of the show/reveal</td>
+      <td><strong>Tag</strong></td>
+      <td>cat</td>
+      <td>Vous pouvez choisir le thème que vous voulez en saissisant le Tag dans le shortCode</td>
+      <td>[gif_not_found_slider tag="dog"]</td>
     </tr>
     <tr>
-      <td><strong>showEasing</strong></td>
-      <td>'linear'</td>
-      <td>The easing of the show/reveal</td>
+      <td><strong>Largeur</strong></td>
+      <td>30vw</td>
+      <td>Vous pouvez choisir la taille que vous voulez (en px ou en pourcentage de la taille de la fenêtre [vw]) en saissisant la width dans le shortCode</td>
+      <td>[gif_not_found_slider width="50vw"]</td>
     </tr>
     <tr>
-      <td><strong>hideSpeed</strong></td>
-      <td>50</td>
-      <td>The speed of the hide/conceal</td>
-    </tr>
-    <tr>
-      <td><strong>hideEasing</strong></td>
-      <td>'linear'</td>
-      <td>The easing of the hide/conceal</td>
-    </tr>					
-    <tr>
-      <td><strong>width</strong></td>
-      <td>'auto'</td>
-      <td>The width that the data will be truncated to - <em>('auto' or px amount)</em></td>
-    </tr>
-    <tr>
-      <td><strong>ellipsis</strong></td>
-      <td>true</td>
-      <td>Set to true to enable the ellipsis</td>
-    </tr>
-    <tr>
-      <td><strong>title</strong></td>
-      <td>false</td>
-      <td>Set to true to show the full data on hover</td>
-    </tr>
-    <tr>
-      <td><strong>afterShow</strong></td>
-      <td> $.noop</td>
-      <td>The callback fired after the show/reveal</td>
-    </tr>
-    <tr>
-      <td><strong>afterHide</strong></td>
-      <td>$.noop</td>
-      <td>The callback fired after the hide/conceal</td>
+      <td><strong>Hauteur</strong></td>
+      <td>30vh</td>
+      <td>Vous pouvez choisir la taille que vous voulez (en px ou en pourcentage de la taille de la fenêtre [vh]) en saissisant la height dans le shortCode</td>
+      <td>[gif_not_found_slider height="50vh"]</td>
     </tr>
   </tbody>
 </table>
+
+<p> Vous pouvez utiliser les 3 paramètres ensembles séparés par un espace </p>
+<p> Exemple : [gif_not_found_slider tag="dog" height="50vh" width="50vw"]</p>
+
+<br>
+
 
   <?php
 }
