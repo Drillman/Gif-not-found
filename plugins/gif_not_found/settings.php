@@ -39,6 +39,7 @@ function wpln_custom_admin_css() {
     padding: 10px 15px;
     position: relative;
     text-shadow: 0 1px 0 #000;	
+    text-align: center;
   }
   
   th:after {
@@ -70,6 +71,7 @@ function wpln_custom_admin_css() {
     padding: 10px 15px;
     position: relative;
     transition: all 300ms;
+    text-align:center;
   }
   
   td:first-child {
