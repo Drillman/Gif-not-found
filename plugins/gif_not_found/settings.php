@@ -6,7 +6,6 @@ function wpln_custom_admin_css() {
     background: #fafafa url(https://jackrugile.com/images/misc/noise-diagonal.png);
     color: #444;
     font: 100%/30px \'Helvetica Neue\', helvetica, arial, sans-serif;
-    text-shadow: 0 1px 0 #fff;
   }
   
   strong {
@@ -139,9 +138,13 @@ function elementsPage(){
 <p> Vous pouvez utiliser les 3 paramètres ensembles séparés par un espace </p>
 <p> Exemple : [gif_not_found_slider tag="dog" height="50vh" width="50vw"]</p>
 
-<br>
+<p> Un widget a aussi été créé lorsque vous avez installé le pluging. </p>
+<p> Il suffit d'ajouter le widget à l'élément que vous voulez. Et ainsi, remplir les champs : </p> 
+  <p>&nbsp;&nbsp;&nbsp;&nbsp; - le tag  </p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp; - hauteur </p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp; - largeur </p>
 
-
+<h1>Wordpress give wings ! </h1>  
   <?php
 }
 
