@@ -91,7 +91,7 @@ function wpln_custom_admin_css() {
         tr {
             background: url(https://jackrugile.com/images/misc/noise-diagonal.png);	
         }
-  </style>';
+    </style>';
 }
 
 // create a menu page for the documentation of the plugin
