@@ -65,38 +65,32 @@
          <p>
                  <label for="<?php echo $this->get_field_id('height'); ?>">Hauteur :</label>
                  <input id="<?php echo $this->get_field_id('height'); ?>" name="<?php echo $this->get_field_name('height'); ?>" type="text" value="<?php echo esc_attr($height); ?>" />
-         </p>
-         <p>
-                 <label for="<?php echo $this->get_field_id('width'); ?>">Largeur :</label>
-                 <input id="<?php echo $this->get_field_id('width'); ?>" name="<?php echo $this->get_field_name('width'); ?>" type="text" value="<?php echo esc_attr($width); ?>" />
-         </p>
-         <p>
+        </p>
+        <p>
+                <label for="<?php echo $this->get_field_id('width'); ?>">Largeur :</label>
+                <input id="<?php echo $this->get_field_id('width'); ?>" name="<?php echo $this->get_field_name('width'); ?>" type="text" value="<?php echo esc_attr($width); ?>" />
+        </p>
+        <p>
+            <?php
+                $transitions = [
+                    'slide-left' => 'Slide de droite à gauche',
+                    'slide-right' => 'Slide de gauche à droite',
+                    'slide-top' => 'Slide de haut en bas',
+                    'slide-bot' => 'Slide de bas en haut'
+                ];
+            ?>
             <label for="<?php echo $this->get_field_id('name'); ?>">Choix de transition :</label> 
             <select id="<?php echo $this->get_field_id('name'); ?>" name="<?php echo $this->get_field_name('name'); ?>" > 
-                <?php if($name == "slide-left"){ ?>
-                    <option selected value="slide-left">Slide de droite à gauche</option>
-                <?php } else { ?>
-                    <option value="slide-left">Slide de droite à gauche</option> 
-                <?php } ?>
-
-                <?php if($name == "slide-right"){ ?>
-                    <option selected value="slide-right">Slide de gauche à droite</option>
-                <?php } else { ?>
-                    <option value="slide-right">Slide de gauche à droite</option> 
-                <?php } ?>
-
-                <?php if($name == "slide-top"){ ?>
-                    <option selected value="slide-top">Slide de haut en bas</option>
-                <?php } else { ?>
-                    <option  value="slide-top">Slide de haut en bas</option> 
-                <?php } ?>
-
-                <?php if($name == "slide-bot"){ ?>
-                    <option selected value="slide-bot">Slide de bas en haut</option>
-                <?php } else { ?>
-                    <option value="slide-bot">Slide de bas en haut</option> 
-                <?php } ?>
-            </select> 
+                <?php foreach ($transitions as $key => $transition): ?>
+                    <option value="<?php echo $key ?>"
+                        <?php if ($name == $key){
+                            echo "selected";
+                        }?>
+                    >
+                    <?php echo $transition ?>
+                        </option>
+                    <?php endforeach; ?>
+            </select>
         </p>
     <?php }
 }
