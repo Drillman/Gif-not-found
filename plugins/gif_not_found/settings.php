@@ -7,6 +7,10 @@ function wpln_custom_admin_css() {
     color: #444;
     font: 100%/30px \'Helvetica Neue\', helvetica, arial, sans-serif;
   }
+
+  p{
+      font-size:16px;
+  }
   
   strong {
     font-weight: bold; 
@@ -27,7 +31,7 @@ function wpln_custom_admin_css() {
     width: 800px;
   }	
   
-  th {
+  #plugin-th {
     background: url(https://jackrugile.com/images/misc/noise-diagonal.png), linear-gradient(#777, #444);
     border-left: 1px solid #555;
     border-right: 1px solid #777;
@@ -100,19 +104,22 @@ function elementsPage(){
   ?>
   <h1>Documentation du plugin Gif not found</h1>
     <p>Il y a un shortcode avec 3 atributs optionnels :</p>
-    <p>&nbsp;&nbsp;&nbsp;&nbsp; - le thème </p>
-    <p>&nbsp;&nbsp;&nbsp;&nbsp; - la largeur du gif </p>
-    <p>&nbsp;&nbsp;&nbsp;&nbsp; - la hauteur du gif </p>
+    <ul>
+        <li>&nbsp;&nbsp;- le thème </li>
+        <li>&nbsp;&nbsp;- la largeur du gif </li>
+        <li>&nbsp;&nbsp;- la hauteur du gif </li>
+        <li>&nbsp;&nbsp;- le nom de la transition souhaité </li>
+    </ul>
   
-  <p>pour utiliser le pluging il faut utiliser le shortcode suivant : [gif_not_found_slider] </p>
+  <p> Il faut utiliser le shortcode suivant : [gif_not_found_slider] </p>
 
   <table>
   <thead>
     <tr>
-      <th>Option</th>
-      <th>Défaut</th>
-      <th>Description</th>
-      <th>Exemple d'utilisation</th>
+      <th id="plugin-th">Option</th>
+      <th id="plugin-th">Défaut</th>
+      <th id="plugin-th">Description</th>
+      <th id="plugin-th">Exemple d'utilisation</th>
     </tr>
   </thead>
   <tbody>
@@ -134,19 +141,27 @@ function elementsPage(){
       <td>Vous pouvez choisir la taille que vous voulez (en px ou en pourcentage de la taille de la fenêtre [vh]) en saissisant la height dans le shortcode</td>
       <td>[gif_not_found_slider height="50vh"]</td>
     </tr>
+    <tr>
+      <td><strong>Nom de transition</strong></td>
+      <td>slide-left</td>
+      <td>Vous pouvez choisir le mouvement de transition que vous souhaité (droite à gauche -> slide-left, gauche à droite -> slide-right, haut en bas -> slide-bot, slide-top -> de bas en haut)</td>
+      <td>[gif_not_found_slider name="slide-bot"]</td>
+    </tr>
   </tbody>
 </table>
 
-<p> Vous pouvez utiliser les 3 paramètres ensembles séparés par un espace </p>
-<p> Exemple : [gif_not_found_slider tag="dog" height="50vh" width="50vw"]</p>
+<p> Vous pouvez utiliser les 4 paramètres ensembles séparés par un espace </p>
+<p> Exemple : [gif_not_found_slider tag="dog" height="50vh" width="50vw" name="slide-right"]</p>
 
 <p> Un widget a aussi été créé lorsque vous avez installé le pluging. </p>
-<p> Il suffit d'ajouter le widget à l'élément que vous voulez. Et ainsi, remplir les champs : </p> 
-  <p>&nbsp;&nbsp;&nbsp;&nbsp; - le tag  </p>
-  <p>&nbsp;&nbsp;&nbsp;&nbsp; - hauteur </p>
-  <p>&nbsp;&nbsp;&nbsp;&nbsp; - largeur </p>
+<p> Il suffit d'ajouter le widget à l'élément que vous voulez. Et ainsi, remplir les champs : </p>
+<ul> 
+  <li>&nbsp;&nbsp; - le tag  </li>
+  <li>&nbsp;&nbsp; - hauteur </li>
+  <li>&nbsp;&nbsp; - largeur </li>
+  <li>&nbsp;&nbsp; - choix de transition </li>
+</ul>
 
-<h1>Wordpress give wings ! </h1>  
-  <?php
+<?php
 }
 

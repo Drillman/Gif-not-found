@@ -26,7 +26,8 @@
         $tag = strip_tags($instance['tag']);
         $height = strip_tags($instance['height']);
         $width = strip_tags($instance['width']);
-        echo "<div id='gif_not_found_slider_widget'></div><input id='gif_not_found_slider_widget_data' type='hidden' data-tag='$tag' data-width='$width' data-height='$height' />";
+        $name = strip_tags($instance['name']);
+        echo "<div id='gif_not_found_slider_widget'></div><input id='gif_not_found_slider_widget_data' type='hidden' data-tag='$tag' data-width='$width' data-height='$height' data-name='$name'/>";
     
  }
 
@@ -35,6 +36,7 @@
          $new_instance['tag'] = strip_tags($new_instance['tag']);
          $new_instance['height'] = strip_tags($new_instance['height']);
          $new_instance['width'] = strip_tags($new_instance['width']);
+         $new_instance['name'] = strip_tags($new_instance['name']);
          return $new_instance;
  }
 
@@ -45,13 +47,15 @@
                  array(
                          'tag'    => 'cat',
                          'height' => '30vh',
-                         'width'  => '30vw'  
+                         'width'  => '30vw',
+                         'name'   => 'slide-left'  
                  )
          );
 
          $tag = strip_tags($instance['tag']);
          $height = strip_tags($instance['height']);
          $width = strip_tags($instance['width']);
+         $name = strip_tags($instance['name']);
          ?>
 
          <p>
@@ -66,7 +70,35 @@
                  <label for="<?php echo $this->get_field_id('width'); ?>">Largeur :</label>
                  <input id="<?php echo $this->get_field_id('width'); ?>" name="<?php echo $this->get_field_name('width'); ?>" type="text" value="<?php echo esc_attr($width); ?>" />
          </p>
- <?php }
+         <p>
+            <label for="<?php echo $this->get_field_id('name'); ?>">Choix de transition :</label> 
+            <select id="<?php echo $this->get_field_id('name'); ?>" name="<?php echo $this->get_field_name('name'); ?>" > 
+                <?php if($name == "slide-left"){ ?>
+                    <option selected value="slide-left">Slide de droite à gauche</option>
+                <?php } else { ?>
+                    <option value="slide-left">Slide de droite à gauche</option> 
+                <?php } ?>
+
+                <?php if($name == "slide-right"){ ?>
+                    <option selected value="slide-right">Slide de gauche à droite</option>
+                <?php } else { ?>
+                    <option value="slide-right">Slide de gauche à droite</option> 
+                <?php } ?>
+
+                <?php if($name == "slide-top"){ ?>
+                    <option selected value="slide-top">Slide de haut en bas</option>
+                <?php } else { ?>
+                    <option  value="slide-top">Slide de haut en bas</option> 
+                <?php } ?>
+
+                <?php if($name == "slide-bot"){ ?>
+                    <option selected value="slide-bot">Slide de bas en haut</option>
+                <?php } else { ?>
+                    <option value="slide-bot">Slide de bas en haut</option> 
+                <?php } ?>
+            </select> 
+        </p>
+    <?php }
 }
 
 function init_gif_not_found_widget() {

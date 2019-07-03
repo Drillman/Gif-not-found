@@ -18,7 +18,8 @@ const GifNotFoundSlider = {
                     alt: '',
                     style: {
                         width: '30vw',
-                        height: '30vh'
+                        height: '30vh',
+                        name: 'slide-left'
                     }
                 }
             }
@@ -52,14 +53,15 @@ const GifNotFoundSlider = {
 
     mounted() {
         const gifNotFoundParameters = document.getElementById(this.dataId).dataset;
-
         this.loadGif();
+        console.log(gifNotFoundParameters);
         this.giphy.image.style.width = gifNotFoundParameters.width || '30vw';
         this.giphy.image.style.height = gifNotFoundParameters.height || '30vh';
+        this.giphy.image.style.name = gifNotFoundParameters.name || 'slide-left';
     },
 
     template: `
-        <transition name='slide-left' mode='out-in' appear>
+        <transition :name='giphy.image.style.name' mode='out-in' appear>
             <img
                 @click='loadGif'
                 :key='giphy.image.url'
