@@ -153,7 +153,7 @@ function elementsPage(){
 <p> Vous pouvez utiliser les 4 paramètres ensembles séparés par un espace </p>
 <p> Exemple : [gif_not_found_slider tag="dog" height="50vh" width="50vw" name="slide-right"]</p>
 
-<p> Un widget a aussi été créé lorsque vous avez installé le pluging. </p>
+<p> Un widget a aussi été créé lorsque vous avez installé le plugin. </p>
 <p> Il suffit d'ajouter le widget à l'élément que vous voulez. Et ainsi, remplir les champs : </p>
 <ul> 
   <li>&nbsp;&nbsp; - le tag  </li>
