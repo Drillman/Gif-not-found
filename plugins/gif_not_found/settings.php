@@ -2,25 +2,16 @@
 
 function wpln_custom_admin_css() {
   echo '<style type="text/css">
-  body {
-    background: #fafafa url(https://jackrugile.com/images/misc/noise-diagonal.png);
-    color: #444;
-    font: 100%/30px \'Helvetica Neue\', helvetica, arial, sans-serif;
-  }
-
-  p{
+  
+  .plugin-p{
       font-size:16px;
   }
   
-  strong {
+  .plugin-strong {
     font-weight: bold; 
   }
   
-  em {
-    font-style: italic; 
-  }
-  
-  table {
+  .plugin-table {
     background: #f5f5f5;
     border-collapse: separate;
     box-shadow: inset 0 1px 0 #fff;
@@ -46,7 +37,7 @@ function wpln_custom_admin_css() {
     text-align: center;
   }
   
-  th:after {
+  #plugin-th:after {
     background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08));
     content: \'\';
     display: block;
@@ -58,16 +49,16 @@ function wpln_custom_admin_css() {
     width: 100%;
   }
   
-  th:first-child {
+  #plugin-th:first-child {
     border-left: 1px solid #777;	
     box-shadow: inset 1px 1px 0 #999;
   }
   
-  th:last-child {
+  #plugin-th:last-child {
     box-shadow: inset -1px 1px 0 #999;
   }
   
-  td {
+  .plugin-td {
     border-right: 1px solid #fff;
     border-left: 1px solid #e8e8e8;
     border-top: 1px solid #fff;
@@ -78,16 +69,16 @@ function wpln_custom_admin_css() {
     text-align:center;
   }
   
-  td:first-child {
+  .plugin-td:first-child {
     box-shadow: inset 1px 0 0 #fff;
   }	
   
-  td:last-child {
+  .plugin-td:last-child {
     border-right: 1px solid #e8e8e8;
     box-shadow: inset -1px 0 0 #fff;
   }	
   
-  tr {
+  .plugin-tr {
     background: url(https://jackrugile.com/images/misc/noise-diagonal.png);	
   }
   </style>';
@@ -103,7 +94,7 @@ function my_cool_plugin_create_menu() {
 function elementsPage(){
   ?>
   <h1>Documentation du plugin Gif not found</h1>
-    <p>Il y a un shortcode avec 3 atributs optionnels :</p>
+    <p class = "plugin-p">Il y a un shortcode avec 3 atributs optionnels :</p>
     <ul>
         <li>&nbsp;&nbsp;- le thème </li>
         <li>&nbsp;&nbsp;- la largeur du gif </li>
@@ -111,11 +102,11 @@ function elementsPage(){
         <li>&nbsp;&nbsp;- le nom de la transition souhaité </li>
     </ul>
   
-  <p> Il faut utiliser le shortcode suivant : [gif_not_found_slider] </p>
+  <p class = "plugin-p"> Il faut utiliser le shortcode suivant : [gif_not_found_slider] </p>
 
-  <table>
+  <table class = "plugin-table">
   <thead>
-    <tr>
+    <tr class = "plugin-tr">
       <th id="plugin-th">Option</th>
       <th id="plugin-th">Défaut</th>
       <th id="plugin-th">Description</th>
@@ -123,38 +114,38 @@ function elementsPage(){
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><strong>Tag</strong></td>
-      <td>cat</td>
-      <td>Vous pouvez choisir le thème que vous voulez en saissisant le Tag dans le shortcode</td>
-      <td>[gif_not_found_slider tag="dog"]</td>
+    <tr class = "plugin-tr">
+      <td class = "plugin-td"><strong class = "plugin-strong">Tag</strong></td>
+      <td class = "plugin-td">cat</td>
+      <td class = "plugin-td">Vous pouvez choisir le thème que vous voulez en saissisant le Tag dans le shortcode</td>
+      <td class = "plugin-td">[gif_not_found_slider tag="dog"]</td>
     </tr>
-    <tr>
-      <td><strong>Largeur</strong></td>
-      <td>30vw</td>
-      <td>Vous pouvez choisir la taille que vous voulez (en px ou en pourcentage de la taille de la fenêtre [vw]) en saissisant la width dans le shortcode</td>
-      <td>[gif_not_found_slider width="50vw"]</td>
+    <tr class = "plugin-tr">
+      <td class = "plugin-td"><strong class = "plugin-strong">Largeur</strong></td>
+      <td class = "plugin-td">30vw</td>
+      <td class = "plugin-td">Vous pouvez choisir la taille que vous voulez (en px ou en pourcentage de la taille de la fenêtre [vw]) en saissisant la width dans le shortcode</td>
+      <td class = "plugin-td">[gif_not_found_slider width="50vw"]</td>
     </tr>
-    <tr>
-      <td><strong>Hauteur</strong></td>
-      <td>30vh</td>
-      <td>Vous pouvez choisir la taille que vous voulez (en px ou en pourcentage de la taille de la fenêtre [vh]) en saissisant la height dans le shortcode</td>
-      <td>[gif_not_found_slider height="50vh"]</td>
+    <tr class = "plugin-tr">
+      <td class = "plugin-td"><strong class = "plugin-strong">Hauteur</strong></td>
+      <td class = "plugin-td">30vh</td>
+      <td class = "plugin-td">Vous pouvez choisir la taille que vous voulez (en px ou en pourcentage de la taille de la fenêtre [vh]) en saissisant la height dans le shortcode</td>
+      <td class = "plugin-td">[gif_not_found_slider height="50vh"]</td>
     </tr>
-    <tr>
-      <td><strong>Nom de transition</strong></td>
-      <td>slide-left</td>
-      <td>Vous pouvez choisir le mouvement de transition que vous souhaité (droite à gauche -> slide-left, gauche à droite -> slide-right, haut en bas -> slide-bot, slide-top -> de bas en haut)</td>
-      <td>[gif_not_found_slider name="slide-bot"]</td>
+    <tr class = "plugin-tr">
+      <td class = "plugin-td"><strong class = "plugin-strong">Nom de transition</strong></td>
+      <td class = "plugin-td">slide-left</td>
+      <td class = "plugin-td">Vous pouvez choisir le mouvement de transition que vous souhaité (droite à gauche -> slide-left, gauche à droite -> slide-right, haut en bas -> slide-bot, slide-top -> de bas en haut)</td>
+      <td class = "plugin-td">[gif_not_found_slider name="slide-bot"]</td>
     </tr>
   </tbody>
 </table>
 
-<p> Vous pouvez utiliser les 4 paramètres ensembles séparés par un espace </p>
-<p> Exemple : [gif_not_found_slider tag="dog" height="50vh" width="50vw" name="slide-right"]</p>
+<p class = "plugin-p"> Vous pouvez utiliser les 4 paramètres ensembles séparés par un espace </p>
+<p class = "plugin-p"> Exemple : [gif_not_found_slider tag="dog" height="50vh" width="50vw" name="slide-right"]</p>
 
-<p> Un widget a aussi été créé lorsque vous avez installé le plugin. </p>
-<p> Il suffit d'ajouter le widget à l'élément que vous voulez. Et ainsi, remplir les champs : </p>
+<p class = "plugin-p"> Un widget a aussi été créé lorsque vous avez installé le plugin. </p>
+<p class = "plugin-p"> Il suffit d'ajouter le widget à l'élément que vous voulez. Et ainsi, remplir les champs : </p>
 <ul> 
   <li>&nbsp;&nbsp; - le tag  </li>
   <li>&nbsp;&nbsp; - hauteur </li>
