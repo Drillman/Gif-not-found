@@ -2,7 +2,7 @@
 
 function wpln_custom_admin_css() {
   echo '<style type="text/css">
-  
+
   .plugin-p{
       font-size:16px;
   }
@@ -94,7 +94,7 @@ function my_cool_plugin_create_menu() {
 function elementsPage(){
   ?>
   <h1>Documentation du plugin Gif not found</h1>
-    <p class = "plugin-p">Il y a un shortcode avec 3 atributs optionnels :</p>
+    <p class = "plugin-p">Il y a un shortcode avec 4 atributs optionnels :</p>
     <ul>
         <li>&nbsp;&nbsp;- le thème </li>
         <li>&nbsp;&nbsp;- la largeur du gif </li>
